@@ -1,38 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+- Introduction
+This is a simple Next.js application that allows admins to view information about other users. The application has a clean and intuitive interface that makes it easy to find the information you're looking for.
 
-## Getting Started
+-Getting Started
+To run this application, you will need to have Node.js and npm installed on your machine. Once you have these tools, you can clone the repository and install the required dependencies with the following commands:
 
-First, run the development server:
+$ git clone https://github.com/<your-repo-url>.git
+$ cd <your-repo-folder>
+$ npm install
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Next, start the development server with the following command:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+$ npm run dev
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+This will start the server and you can access the application in your browser at http://localhost:3000.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Features
+The application allows you to view information about other users, including their name, email, and profile picture. You can also search for users by their name, making it easy to find the information you're looking for.
 
-## Learn More
+API Reference
+The application uses a REST API to retrieve user information. The API is located at https://run.mocky.io/v3/a2fbc23e-069e-4ba5-954c-cd910986f40f
+and returns an array of user objects in the following format:
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Deployment
+To deploy this application to a production environment, you will need to build the production version of the code and serve it with a static web server. You can build the production version of the code with the following command:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+$ npm run build
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+Once you have built the code, you can serve it with a static web server like Nginx or Apache. Be sure to configure the server to serve the .next folder as the root of the application.
+
+Conclusion
+This Next.js application provides an easy way to view information about other users. With its clean and intuitive interface, you can quickly find the information you're looking for. Whether you're a developer or a casual user, this application is a great tool for exploring user information.
+
+
+
