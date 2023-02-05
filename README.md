@@ -4,8 +4,7 @@ This is a simple Next.js application that allows admins to view information abou
 -Getting Started
 To run this application, you will need to have Node.js and npm installed on your machine. Once you have these tools, you can clone the repository and install the required dependencies with the following commands:
 
-$ git clone https://github.com/<your-repo-url>.git
-$ cd <your-repo-folder>
+$ git clonegithub.com/ahmad-salman98/estarta-assessment.git
 $ npm install
 
 
