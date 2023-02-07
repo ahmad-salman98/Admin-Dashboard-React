@@ -15,7 +15,7 @@ export default function Home({ data }) {
 
   if (!dataArr) return "loading";
   return (
-    <main className="py-5 px-12 max-w-[90rem] mx-auto">
+    <main className="py-5 px-12 max-w-[90rem] mx-auto overflow-hidden">
       <BasicBreadcrumbs className="text-sm" />
       <Filters />
       <Table />
