@@ -106,7 +106,15 @@ export default function Table() {
           </tr>
         </thead>
 
-        <tbody>{createTableRow}</tbody>
+        <tbody>
+          {currentItems.length > 0 ? (
+            createTableRow
+          ) : (
+            <p className="text-[12px] text-center w-screen  -ml-12 font-[500] text-[#333] ">
+              no matching results !{" "}
+            </p>
+          )}
+        </tbody>
       </table>
 
       <Stack spacing={2} className="mt-4 mx-auto w-fit">
