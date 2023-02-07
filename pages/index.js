@@ -1,23 +1,22 @@
-import BasicBreadcrumbs from "@/components/Breadcrumbs";
-import Context from "@/components/context";
-import Filters from "@/components/Filters/Filters";
-import Table from "@/components/Table/Table";
+import BasicBreadcrumbs from "../components/Breadcrumbs";
+import Context from "../components/context";
+import Filters from "../components/Filters/Filters";
+import Table from "../components/Table/Table";
 import React, { useContext, useEffect } from "react";
 
 export default function Home({ data }) {
-  const { setDataArr, dataArr } = useContext(Context);
+  const { setDataArr, dataArr, dataArrCopy, setDataArrCopy } =
+    useContext(Context);
+
   useEffect(() => {
     setDataArr(data?.result?.auditLog);
-    console.log(
-      "heiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii",
-      data.result.auditLog
-    );
+    setDataArrCopy(data?.result?.auditLog);
   }, []);
-  console.log(data);
+
   if (!dataArr) return "loading";
   return (
-    <main className="py-5 px-12">
-      <BasicBreadcrumbs />
+    <main className="py-5 px-12 max-w-[90rem] mx-auto">
+      <BasicBreadcrumbs className="text-sm" />
       <Filters />
       <Table />
     </main>
@@ -35,7 +34,7 @@ export async function getServerSideProps() {
       }
     );
     const data = await res.json();
- 
+
     return { props: { data } };
   } catch (error) {
     return {
@@ -46,4 +45,3 @@ export async function getServerSideProps() {
     };
   }
 }
-

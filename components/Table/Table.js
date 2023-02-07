@@ -3,24 +3,29 @@ import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import Context from "../context";
 import Arrow from "../assets/Arrow";
+import { useRouter } from "next/router";
 
 export default function Table() {
-  const { dataArr } = useContext(Context);
+  // context states
+  const { dataArrCopy, handleSearch } = useContext(Context);
+
+  // component states
   const [currentPage, setCurrentPage] = useState(1);
   const [currentItems, setCurrentItems] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [sortBy, setSortBy] = useState("");
   const itemsPerPage = 10;
-  
-console.log
+
+  const router = useRouter();
   useEffect(() => {
-    const data = dataArr;
+    handleSearch();
+  }, [router]);
+  useEffect(() => {
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
-    setCurrentItems(data && data?.slice(startIndex, endIndex));
-    setPageCount(Math.ceil(data?.length / itemsPerPage));
-    console.log("From  Table   copy", data);
-  }, [currentPage, itemsPerPage]);
+    setCurrentItems(dataArrCopy?.slice(startIndex, endIndex));
+    setPageCount(Math.ceil(dataArrCopy?.length / itemsPerPage));
+  }, [currentPage, itemsPerPage, dataArrCopy]);
 
   // funtions to create tabe elements
   const createTableCell = (text, className = null) => {

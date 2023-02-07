@@ -14,7 +14,8 @@
 }
 
 .custom-menu {
-  @apply border-[1px] border-[#d3d3d3] w-[180px] text-[12px] rounded-b-[5px]  text-[#333] border-t-0 -mt-1 bg-white shadow-sm absolute z-10;
+  @apply border-[1px] border-[#d3d3d3] w-[180px] text-[12px] rounded-b-[5px]  text-[#333] border-t-0 -mt-1 bg-white shadow-sm absolute z-10 max-h-[120px] overflow-y-auto;
+   
 }
 
 .custom-search {

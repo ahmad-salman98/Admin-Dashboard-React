@@ -1,6 +1,6 @@
-import '@/styles/globals.css'
-import Head from 'next/head'
-import { ContextProvider } from '@/components/context';
+import "../styles/globals.css";
+import Head from "next/head";
+import { ContextProvider } from "../components/context";
 
 export default function App({ Component, pageProps }) {
   return (
@@ -16,6 +16,5 @@ export default function App({ Component, pageProps }) {
         <Component {...pageProps} />
       </ContextProvider>
     </>
-  )
-
+  );
 }
